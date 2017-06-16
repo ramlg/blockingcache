@@ -9,3 +9,5 @@ FailSafeCacheInterceptor overrides the invoke method with one addition of unlock
 The issue while doing this was getting the key generated as CacheOperationContext has generateKey method defined as protected, which means this cannot be used directly to get the key.
 FailSafteCacheOperationContext is defined to extend CacehOperationContext and have one extra method to return the key. 
 This will make sure the the key is always same as the one used by BlockingCache.
+
+Note: cacheOperation.getKey() does not work, when a different keyGenerator is used for generating the key.
