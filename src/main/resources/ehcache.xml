@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+         updateCheck="false">
+
+    <cache name="cacheService" eternal="false" overflowToDisk="false" memoryStoreEvictionPolicy="LRU" timeToLiveSeconds="1200" timeToIdleSeconds="1200" maxEntriesLocalHeap="2000">
+        <cacheDecoratorFactory class="com.ramlg.blockingcache.BlockingCacheDecoratorFactory" properties="timeoutMs=2000"/>
+    </cache>
+</ehcache>
